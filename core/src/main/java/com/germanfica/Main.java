@@ -29,7 +29,7 @@ public class Main {
 
         // call reset method
         game.reset();
-        
+
         // close context (container)
         context.close();
     }
