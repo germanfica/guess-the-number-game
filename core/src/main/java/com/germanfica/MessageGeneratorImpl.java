@@ -17,16 +17,18 @@ public class MessageGeneratorImpl implements MessageGenerator {
 
     // == init ==
     @PostConstruct
-    @Override
-    public String getResultMessage() {
-        log.debug("getResultMessage()");
-        return "I'm the result message.";
+    public void init() {
+        log.info("Game = {}", game);
     }
 
     // == public methods ==
     @Override
     public String getMainMessage() {
-        log.debug("getMainMessage()");
         return "I'm the main message.";
+    }
+
+    @Override
+    public String getResultMessage() {
+        return "I'm the result message.";
     }
 }

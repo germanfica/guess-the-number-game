@@ -31,8 +31,8 @@ public class Main {
         MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
 
         // calling methods from MessageGenerator
-        messageGenerator.getMainMessage();
-        messageGenerator.getResultMessage();
+        log.info("messageGenerator = {}", messageGenerator.getMainMessage());
+        log.info("getResultMessage = {}", messageGenerator.getResultMessage());
 
         // close context (container)
         context.close();
