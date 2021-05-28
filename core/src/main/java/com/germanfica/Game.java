@@ -7,6 +7,7 @@ public interface Game {
     int getSamallest();
     int getBiggest();
     int getRemainingGuesses();
+    int getGuessCount();
     void reset();
     void check();
     boolean isValidNumberRange();

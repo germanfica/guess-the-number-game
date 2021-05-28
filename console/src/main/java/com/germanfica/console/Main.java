@@ -1,6 +1,6 @@
 package com.germanfica.console;
 
-import com.germanfica.AppConfig;
+import com.germanfica.config.AppConfig;
 import com.germanfica.Game;
 import com.germanfica.MessageGenerator;
 import com.germanfica.NumberGenerator;
