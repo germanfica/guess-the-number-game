@@ -2,6 +2,7 @@ package com.germanfica.config;
 
 import com.germanfica.GuessCount;
 import com.germanfica.MaxNumber;
+import com.germanfica.MinNumber;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +16,8 @@ public class GameConfig {
     private int maxNumber;
     @Value("${game.guessCount:5}")
     private int guessCount ;
+    @Value("${game.minNumber:0}")
+    private int minNumber;
 
     // == beans methods ==
     @Bean
@@ -28,4 +31,8 @@ public class GameConfig {
     public int guessCount() {
         return guessCount;
     }
+
+    @Bean
+    @MinNumber
+    public int minNumber() { return minNumber; }
 }
