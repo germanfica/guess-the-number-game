@@ -2,14 +2,19 @@ package com.germanfica.config;
 
 import com.germanfica.GuessCount;
 import com.germanfica.MaxNumber;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource("classpath:config/game.properties")
 public class GameConfig {
     // == fields ==
-    private int maxNumber = 25;
-    private int guessCount = 15;
+    @Value("${game.maxNumber:20}")
+    private int maxNumber;
+    @Value("${game.guessCount:5}")
+    private int guessCount ;
 
     // == beans methods ==
     @Bean
