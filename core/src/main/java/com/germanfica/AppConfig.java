@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "com.germafica")
+@ComponentScan(basePackages = "com.germanfica")
 public class AppConfig {
     // == bean methods ==
     @Bean
