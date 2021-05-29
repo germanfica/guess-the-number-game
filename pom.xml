@@ -40,7 +40,7 @@
         <annotation-api.version>1.3.2</annotation-api.version>
     </properties>
 
-    <!-- clear simple way to have the same version of spring jars in all your sub modules -->
+    <!-- Clear simple way to have the same version of spring jars in all your sub modules -->
     <dependencyManagement>
         <dependencies>
             <!-- Logback -->
