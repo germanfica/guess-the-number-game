@@ -1,17 +1,22 @@
 package com.germanfica;
 
+import lombok.AccessLevel;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.ranges.Range;
 
 import java.util.Random;
 
+@Getter
 @Component
 public class NumberGeneratorImpl implements NumberGenerator {
     // == fields ==
-    private final Random random = new Random();
     private final int maxNumber;
     private final int minNumber;
+
+    @Getter(AccessLevel.NONE)
+    private final Random random = new Random();
 
     // == constructors ==
     @Autowired
@@ -27,12 +32,4 @@ public class NumberGeneratorImpl implements NumberGenerator {
         int bound = maxNumber - minNumber;
         return random.nextInt(bound) + minNumber;
     }
-
-    @Override
-    public int getMaxNumber() {
-        return maxNumber;
-    }
-
-    @Override
-    public int getMinNumber() { return minNumber; }
 }

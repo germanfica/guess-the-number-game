@@ -16,17 +16,16 @@ import javax.annotation.PreDestroy;
 @Getter
 @Component
 public class GameImpl implements Game {
-
     // == fields ==
-    @Getter(AccessLevel.NONE)
-    private final NumberGenerator numberGenerator;
-
     private final int guessCount;
     private int number;
     private int smallest;
     private int biggest;
     private int remainingGuesses;
     private boolean validNumberRange = true;
+
+    @Getter(AccessLevel.NONE)
+    private final NumberGenerator numberGenerator;
 
     @Setter
     private int guess;

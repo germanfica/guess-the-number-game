@@ -2,6 +2,7 @@ package com.germanfica.console;
 
 import com.germanfica.Game;
 import com.germanfica.MessageGenerator;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +12,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Slf4j
 @Component
 public class ConsoleNumberGuess {
-    // == constants ==
-    private static final Logger log = LoggerFactory.getLogger(ConsoleNumberGuess.class);
-
     // == fields ==
     private final Game game;
     private final MessageGenerator messageGenerator;
