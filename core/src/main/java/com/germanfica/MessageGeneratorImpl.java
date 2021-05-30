@@ -30,7 +30,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
     @Override
     public String getMainMessage() {
         return "Number is between " +
-                game.getSamallest() +
+                game.getSmallest() +
                 " and " +
                 game.getBiggest() +
                 ". Can you guess it?";

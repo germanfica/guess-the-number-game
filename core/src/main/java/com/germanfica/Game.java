@@ -4,7 +4,7 @@ public interface Game {
     int getNumber();
     int getGuess();
     void setGuess(int guess);
-    int getSamallest();
+    int getSmallest();
     int getBiggest();
     int getRemainingGuesses();
     int getGuessCount();
