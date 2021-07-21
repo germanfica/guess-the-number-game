@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Number Game</title>
+    <!-- Style Resources -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+          crossorigin="anonymous">
+</head>
+<body>
+    <div class="hero-unit">
+        <h1>Welcome to the Number Game!</h1>
+        <p>Click on the "Play" button to start the game.</p>
+        <p>
+            <a th:href="play" th:text="Play" class="btn btn-primary btn-large">
+                Click to Play
+            </a>
+        </p>
+    </div>
+</body>
+</html>
