@@ -11,5 +11,6 @@ public class WebConfig implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         WebMvcConfigurer.super.addViewControllers(registry);
         registry.addViewController("/").setViewName(ViewNames.HOME);
+        registry.addViewController("/play").setViewName(ViewNames.PLAY);
     }
 }
