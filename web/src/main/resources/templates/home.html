@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Guess the Number Game</title>
-    <!-- Style Resources -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
-          crossorigin="anonymous">
-    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css" media="all" />
-</head>
+
+<fragment th:replace="~{fragments/head :: headFragment}"/>
+
 <body>
     <div class="hero-unit">
-
+        <!-- Navbar -->
+        <fragment th:replace="~{fragments/navbar :: navbarFragment}"/>
+        <!-- Home content -->
         <div class="home-container">
             <h1>Welcome to Guess the Number Game!</h1>
             <div class="break"></div>
@@ -22,6 +18,9 @@
                     Click to Play
                 </a>
             </p>
+            <div class="break"></div>
+            <!-- Footer -->
+            <fragment th:replace="~{fragments/footer :: footerFragment}" />
         </div>
     </div>
 </body>

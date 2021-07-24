@@ -28,7 +28,10 @@ public class GameController {
     @GetMapping(GameMappings.HOME)
     public String home(Model model) {
         log.info("home method called");
+        model.addAttribute(AttributeNames.CURRENT_URL, GameMappings.HOME); // get current url
+        model.addAttribute(AttributeNames.HOME_URL, GameMappings.HOME);
         model.addAttribute(AttributeNames.PLAY_URL, GameMappings.PLAY);
+        model.addAttribute(AttributeNames.ABOUT_URL, GameMappings.ABOUT);
         return ViewNames.HOME;
     }
 
@@ -37,6 +40,7 @@ public class GameController {
         log.info("play method called");
         model.addAttribute(AttributeNames.MAIN_MESSAGE, gameService.getMainMessage());
         model.addAttribute(AttributeNames.RESULT_MESSAGE, gameService.getResultMessage());
+        model.addAttribute(AttributeNames.CURRENT_URL, GameMappings.PLAY); // get current url
         model.addAttribute(AttributeNames.HOME_URL, GameMappings.HOME);
         model.addAttribute(AttributeNames.PLAY_URL, GameMappings.PLAY);
         model.addAttribute(AttributeNames.RESTART_URL, GameMappings.RESTART);

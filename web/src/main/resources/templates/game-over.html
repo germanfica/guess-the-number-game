@@ -1,74 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Guess the Number Game</title>
-  <!-- Style Resources -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link th:href="@{/css/play.css}" rel="stylesheet" type="text/css" media="all" />
-</head>
+<fragment th:replace="~{fragments/head :: headFragment}" />
 
 <body>
   <div>
-    <div class="grid">
-      <div class="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">Guess the number game</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a th:href="${homeUrl}" class="nav-link" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a th:href="${playUrl}" class="nav-link active" href="#">Play</a>
-                </li>
-                <li class="nav-item">
-                  <a th:href="${aboutUrl}" class="nav-link" href="#">About</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <!-- Title -->
-      <div class="game-title">
-        <h1>Guess the Number Game</h1>
-      </div>
-      <!-- Main message -->
-      <div class="main-message">
-        <div class="alert alert-primary d-flex align-items-center" role="alert">
-          <h2>Game Over</h2>
-        </div>
-      </div>
-      <!-- Result message -->
-      <div th:if="${resultMessage} != null" class="result-message">
-        <div class="alert alert-secondary" role="alert">
-          <h4 class="alert-heading">Result</h4>
-          <p th:text="${resultMessage}">Message Result Content</p>
-        </div>
-      </div>
-      <!-- Links -->
-      <div class="game-links">
-        <a th:href="${restartUrl}" class="btn btn-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/>
-          </svg>
-          Play Again
-        </a>
-        <a th:href="${homeUrl}" class="btn btn-secondary">
-          Go to Home
-        </a>
-      </div>
-      <!-- Footer -->
-      <div class="footer">
-        <p>Created by German Fica</p>
+    <!-- Navbar -->
+    <fragment th:replace="~{fragments/navbar :: navbarFragment}" />
+    <!-- Game title -->
+    <fragment th:replace="~{fragments/game-title :: gameTitleFragment}" />
+    <!-- Game over message -->
+    <div class="main-message">
+      <div class="alert alert-primary d-flex align-items-center" role="alert">
+        <h2>Game Over</h2>
       </div>
     </div>
+    <!-- Result message -->
+    <fragment th:replace="~{fragments/result-message :: resultMessageFragment}" />
+    <!-- Play again links -->
+    <div class="game-links">
+      <a th:href="${restartUrl}" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/>
+        </svg>
+        Play Again
+      </a>
+      <a th:href="${homeUrl}" class="btn btn-secondary">
+        Go to Home
+      </a>
+    </div>
+    <!-- Footer -->
+    <fragment th:replace="~{fragments/footer :: footerFragment}" />
   </div>
 </body>
 
