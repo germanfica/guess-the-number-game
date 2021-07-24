@@ -1,8 +1,9 @@
 <thlogic>
     <!-- Head -->
-    <attr sel="#headId" th:replace="~{fragments/head :: headFragment}" />
+    <attr sel="#head" th:replace="~{fragments/head/head :: headFragment}" />
     <!-- Navbar -->
-    <attr sel="#navbarId" th:replace="~{fragments/navbar :: navbarFragment}" />
+    <attr sel="#navbar" th:replace="~{fragments/navbar/navbar :: navbarFragment}" />
     <!-- Footer -->
-    <attr sel="#footerId" th:replace="~{fragments/footer :: footerFragment}" />
+    <attr sel="#footer" th:replace="~{fragments/footer/footer :: footerFragment}" />
+    <attr sel="#play-button" th:href="${playUrl}" th:text="Play" />
 </thlogic>

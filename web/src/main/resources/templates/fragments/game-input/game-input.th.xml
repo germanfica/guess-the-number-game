@@ -1,0 +1,4 @@
+<thlogic>
+    <!-- Head -->
+    <attr sel="#game-input" th:fragment="gameInputFragment" th:action="${playUrl}" />
+</thlogic>

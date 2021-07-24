@@ -1,0 +1,4 @@
+<thlogic>
+    <attr sel="#main-message" th:fragment="mainMessageFragment" th:if="${mainMessage} != null" />
+    <attr sel="#main-message-content" th:text="${mainMessage}" />
+</thlogic>

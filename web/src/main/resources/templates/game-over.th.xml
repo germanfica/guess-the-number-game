@@ -1,14 +1,18 @@
 <thlogic>
     <!-- Head -->
-    <attr sel="#headId" th:replace="~{fragments/head :: headFragment}" />
+    <attr sel="#head" th:replace="~{fragments/head/head :: headFragment}" />
     <!-- Navbar -->
-    <attr sel="#navbarId" th:replace="~{fragments/navbar :: navbarFragment}" />
+    <attr sel="#navbar" th:replace="~{fragments/navbar/navbar :: navbarFragment}" />
     <!-- Game title -->
-    <attr sel="#gameTitleId" th:replace="~{fragments/game-title :: gameTitleFragment}" />
+    <attr sel="#game-title" th:replace="~{fragments/game-title/game-title :: gameTitleFragment}" />
     <!-- Game over message -->
-    <attr sel="#gameOverMessageId" th:replace="~{fragments/game-over-message :: gameOverMessageFragment}" />
+    <attr sel="#game-over-message" th:replace="~{fragments/game-over-message/game-over-message :: gameOverMessageFragment}" />
     <!-- Result message -->
-    <attr sel="#resultMessageId" th:replace="~{fragments/result-message :: resultMessageFragment}" />
+    <attr sel="#result-message" th:replace="~{fragments/result-message/result-message :: resultMessageFragment}" />
     <!-- Footer -->
-    <attr sel="#footerId" th:replace="~{fragments/footer :: footerFragment}" />
+    <attr sel="#footer" th:replace="~{fragments/footer/footer :: footerFragment}" />
+    <!-- Restart url logic - Restart the game -->
+    <attr sel="#restart-button" th:href="${restartUrl}" />
+    <!-- Home url logic - Go to the home -->
+    <attr sel="#home-button" th:href="${homeUrl}" />
 </thlogic>

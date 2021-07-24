@@ -1,0 +1,4 @@
+<thlogic>
+    <attr sel="#result-message" th:fragment="resultMessageFragment" th:if="${resultMessage} != null" />
+    <attr sel="#result-message-content" th:text="${resultMessage}" />
+</thlogic>

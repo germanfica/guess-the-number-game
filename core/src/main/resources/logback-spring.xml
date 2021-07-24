@@ -2,4 +2,6 @@
     <include resource="org/springframework/boot/logging/logback/base.xml"></include>
     <logger name="com.germanfica" level="DEBUG"/>
     <logger name="org.springframework" level="INFO"></logger>
+    <!-- <logger name="org.thymeleaf" level="TRACE"></logger> -->
+    <logger name="org.thymeleaf" level="INFO"></logger>
 </configuration>

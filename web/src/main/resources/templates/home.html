@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
-<fragment id="headId" />
+<fragment id="head" />
 
 <body>
     <div class="hero-unit">
         <!-- Navbar -->
-        <fragment id="navbarId" />
+        <fragment id="navbar" />
         <!-- Home content -->
         <div class="home-container">
             <h1>Welcome to Guess the Number Game!</h1>
@@ -14,13 +14,11 @@
             <p>Click on the "Play" button to start the game.</p>
             <div class="break"></div>
             <p>
-                <a th:href="${playUrl}" th:text="Play" class="btn btn-primary btn-large">
-                    Click to Play
-                </a>
+                <a id="play-button" class="btn btn-primary btn-large">Click to Play</a>
             </p>
             <div class="break"></div>
             <!-- Footer -->
-            <fragment id="footerId" />
+            <fragment id="footer" />
         </div>
     </div>
 </body>

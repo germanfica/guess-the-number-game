@@ -1,0 +1,21 @@
+<thlogic>
+    <attr sel="#navbar" th:fragment="navbarFragment" />
+    <!-- Home url logic - Shows the home view and active the nav link -->
+    <attr sel="#home-url"
+          th:href="${homeUrl}"
+          th:class="${currentUrl} == ${homeUrl}
+            ? 'nav-link active'
+            : 'nav-link' " />
+    <!-- Play url logic - Shows the play view and active the nav link -->
+    <attr sel="#play-url"
+          th:href="${playUrl}"
+          th:class="${currentUrl} == ${playUrl}
+            ? 'nav-link active'
+            : 'nav-link' " />
+    <!-- Play url logic - Shows the about view and active the nav link -->
+    <attr sel="#about-url"
+          th:href="${aboutUrl}"
+          th:class="${currentUrl} == ${aboutUrl}
+            ? 'nav-link active'
+            : 'nav-link' " />
+</thlogic>
