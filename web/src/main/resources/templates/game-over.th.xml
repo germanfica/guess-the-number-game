@@ -1,0 +1,14 @@
+<thlogic>
+    <!-- Head -->
+    <attr sel="#headId" th:replace="~{fragments/head :: headFragment}" />
+    <!-- Navbar -->
+    <attr sel="#navbarId" th:replace="~{fragments/navbar :: navbarFragment}" />
+    <!-- Game title -->
+    <attr sel="#gameTitleId" th:replace="~{fragments/game-title :: gameTitleFragment}" />
+    <!-- Game over message -->
+    <attr sel="#gameOverMessageId" th:replace="~{fragments/game-over-message :: gameOverMessageFragment}" />
+    <!-- Result message -->
+    <attr sel="#resultMessageId" th:replace="~{fragments/result-message :: resultMessageFragment}" />
+    <!-- Footer -->
+    <attr sel="#footerId" th:replace="~{fragments/footer :: footerFragment}" />
+</thlogic>

@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<fragment th:replace="~{fragments/head :: headFragment}" />
+<fragment id="headId" />
 
 <body>
   <div>
     <!-- Navbar -->
-    <fragment th:replace="~{fragments/navbar :: navbarFragment}" />
+    <fragment id="navbarId" />
     <!-- Game title -->
-    <fragment th:replace="~{fragments/game-title :: gameTitleFragment}" />
+    <fragment id="gameTitleId" />
     <!-- Game over message -->
-    <div class="main-message">
-      <div class="alert alert-primary d-flex align-items-center" role="alert">
-        <h2>Game Over</h2>
-      </div>
-    </div>
+    <fragment id="gameOverMessageId" />
     <!-- Result message -->
-    <fragment th:replace="~{fragments/result-message :: resultMessageFragment}" />
-    <!-- Play again links -->
+    <fragment id="resultMessageId" />
+    <!-- Game over links -->
     <div class="game-links">
+      <!-- Play again button -->
       <a th:href="${restartUrl}" class="btn btn-primary">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
           <path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/>
         </svg>
         Play Again
       </a>
+      <!-- Go to home button -->
       <a th:href="${homeUrl}" class="btn btn-secondary">
         Go to Home
       </a>
     </div>
     <!-- Footer -->
-    <fragment th:replace="~{fragments/footer :: footerFragment}" />
+    <fragment id="footerId" />
   </div>
 </body>
 

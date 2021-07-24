@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<fragment th:replace="~{fragments/head :: headFragment}"/>
+<fragment id="headId" />
 
 <body>
     <div class="hero-unit">
         <!-- Navbar -->
-        <fragment th:replace="~{fragments/navbar :: navbarFragment}"/>
+        <fragment id="navbarId" />
         <!-- Home content -->
         <div class="home-container">
             <h1>Welcome to Guess the Number Game!</h1>
@@ -20,7 +20,7 @@
             </p>
             <div class="break"></div>
             <!-- Footer -->
-            <fragment th:replace="~{fragments/footer :: footerFragment}" />
+            <fragment id="footerId" />
         </div>
     </div>
 </body>

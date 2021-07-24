@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
-<fragment th:replace="~{fragments/head :: headFragment}" />
+<!-- Head -->
+<fragment id="headId" />
 
 <body>
   <div>
     <!-- Navbar -->
-    <fragment th:replace="~{fragments/navbar :: navbarFragment}" />
+    <fragment id="navbarId" />
     <!-- Game title -->
-    <fragment th:replace="~{fragments/game-title :: gameTitleFragment}" />
+    <fragment id="gameTitleId" />
     <!-- Main message -->
-    <fragment th:replace="~{fragments/main-message :: mainMessageFragment}" />
+    <fragment id="mainMessageId" />
     <!-- Result message -->
-    <fragment th:replace="~{fragments/result-message :: resultMessageFragment}" />
+    <fragment id="resultMessageId" />
     <!-- Game input -->
-    <fragment th:replace="~{fragments/game-input :: gameInputFragment}" />
+    <fragment id="gameInputId" />
     <!-- Footer -->
-    <fragment th:replace="~{fragments/footer :: footerFragment}" />
+    <fragment id="footerId" />
   </div>
 </body>
 
