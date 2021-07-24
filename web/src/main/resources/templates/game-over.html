@@ -40,15 +40,9 @@
         <h1>Guess the Number Game</h1>
       </div>
       <!-- Main message -->
-      <div th:if="${mainMessage} != null" class="main-message">
-        <div class="alert alert-info d-flex align-items-center" role="alert">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-            <path
-              d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-          </svg>
-          <div>
-            <p th:text="${mainMessage}">Main Message Content</p>
-          </div>
+      <div class="main-message">
+        <div class="alert alert-primary d-flex align-items-center" role="alert">
+          <h2>Game Over</h2>
         </div>
       </div>
       <!-- Result message -->
@@ -58,15 +52,17 @@
           <p th:text="${resultMessage}">Message Result Content</p>
         </div>
       </div>
-      <!-- Game input -->
-      <div class="result-message">
-        <form th:action="${playUrl}" action="#" method="post">
-          <div class="mb-3">
-            <label for="guess" class="form-label">Enter your guess</label>
-            <input id="guess" type="number" name="guess" class="form-control">
-          </div>
-          <button type="submit" value="submit" class="btn btn-warning">Submit</button>
-        </form>
+      <!-- Links -->
+      <div class="game-links">
+        <a th:href="${restartUrl}" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/>
+          </svg>
+          Play Again
+        </a>
+        <a th:href="${homeUrl}" class="btn btn-secondary">
+          Go to Home
+        </a>
       </div>
       <!-- Footer -->
       <div class="footer">

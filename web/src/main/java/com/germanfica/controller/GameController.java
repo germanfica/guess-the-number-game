@@ -1,6 +1,7 @@
 package com.germanfica.controller;
 
 import com.germanfica.service.GameService;
+import com.germanfica.util.AttributeNames;
 import com.germanfica.util.GameMappings;
 import com.germanfica.util.ViewNames;
 import lombok.extern.slf4j.Slf4j;
@@ -24,17 +25,28 @@ public class GameController {
     }
 
     // == request methods ==
+    @GetMapping(GameMappings.HOME)
+    public String home(Model model) {
+        log.info("home method called");
+        model.addAttribute(AttributeNames.PLAY_URL, GameMappings.PLAY);
+        return ViewNames.HOME;
+    }
+
     @GetMapping(GameMappings.PLAY)
     public String play(Model model) {
         log.info("play method called");
-        model.addAttribute("mainMessage", gameService.getMainMessage());
-        model.addAttribute("resultMessage", gameService.getResultMessage());
+        model.addAttribute(AttributeNames.MAIN_MESSAGE, gameService.getMainMessage());
+        model.addAttribute(AttributeNames.RESULT_MESSAGE, gameService.getResultMessage());
+        model.addAttribute(AttributeNames.HOME_URL, GameMappings.HOME);
+        model.addAttribute(AttributeNames.PLAY_URL, GameMappings.PLAY);
+        model.addAttribute(AttributeNames.RESTART_URL, GameMappings.RESTART);
+        model.addAttribute(AttributeNames.ABOUT_URL, GameMappings.ABOUT);
         log.info("model = {}", model);
         // Show GameOver view if the player lost the game
         if(gameService.isGameOver()) {
-            return ViewNames.GAME_OVER;
+            return ViewNames.GAME_OVER; // Show Game Over view
         }
-        return ViewNames.PLAY;
+        return ViewNames.PLAY; // Show Play view
     }
 
     @PostMapping(GameMappings.PLAY)
@@ -42,6 +54,12 @@ public class GameController {
         log.info("processMessage method called");
         log.info("guess = {}", guess);
         gameService.checkGuess(guess);
-        return GameMappings.REDIRECT_PLAY;
+        return GameMappings.REDIRECT_PLAY; // Redirects to play view
+    }
+
+    @GetMapping(GameMappings.RESTART)
+    public String restart() {
+        gameService.reset();
+        return GameMappings.REDIRECT_PLAY; // Redirects to play view
     }
 }
