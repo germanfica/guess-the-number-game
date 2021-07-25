@@ -13,6 +13,13 @@ import javax.annotation.PostConstruct;
 public class MessageGeneratorImpl implements MessageGenerator {
     // == constants ==
     private static final String MAIN_MESSAGE = "game.main.message";
+    private static final String WIN = "game.win";
+    private static final String LOSE = "game.lose";
+    private static final String INVALID_RANGE = "game.invalid.range";
+    private static final String FIRST_GUESS = "game.first.guess";
+    private static final String HIGHER = "game.higher";
+    private static final String LOWER = "game.lower";
+    private static final String REMAINING = "game.remaining";
 
     // == fields ==
     private final Game game;
@@ -34,27 +41,22 @@ public class MessageGeneratorImpl implements MessageGenerator {
     // == public methods ==
     @Override
     public String getMainMessage() {
-//        return "Number is between " +
-//                game.getSmallest() +
-//                " and " +
-//                game.getBiggest() +
-//                ". Can you guess it?";
         return getMessage(MAIN_MESSAGE, game.getSmallest(), game.getBiggest());
     }
 
     @Override
     public String getResultMessage() {
         if(game.isGameWon()) {
-            return "You guessed it! The number was " + game.getNumber();
+            return getMessage(WIN,game.getNumber());
         }else if(game.isGameLost()){
-            return "You lost. The number was " + game.getNumber();
+            return getMessage(LOSE, game.getNumber());
         }else if(!game.isValidNumberRange()){
-            return "Invalid number range!";
+            return getMessage(INVALID_RANGE);
         }else if(game.getRemainingGuesses() == game.getGuessCount()){
-            return "What is your first guess?";
+            return getMessage(FIRST_GUESS);
         }else {
-            String direction = (game.getGuess() < game.getNumber()) ? "Higher" : "Lower";
-            return direction + "! You have " + game.getRemainingGuesses() + " guesses left";
+            String direction = (game.getGuess() < game.getNumber()) ? getMessage(HIGHER) : getMessage(LOWER);
+            return getMessage(REMAINING, direction, game.getRemainingGuesses());
         }
     }
 
