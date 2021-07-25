@@ -1,3 +1,4 @@
 <thlogic>
     <attr sel="#game-over-message" th:fragment="gameOverMessageFragment" />
+    <attr sel="#message-title" th:text="#{game.gameOver}" />
 </thlogic>

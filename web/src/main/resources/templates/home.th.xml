@@ -5,5 +5,8 @@
     <attr sel="#navbar" th:replace="~{fragments/navbar/navbar :: navbarFragment}" />
     <!-- Footer -->
     <attr sel="#footer" th:replace="~{fragments/footer/footer :: footerFragment}" />
-    <attr sel="#play-button" th:href="${playUrl}" th:text="Play" />
+
+    <attr sel="#play-button" th:href="${playUrl}" th:text="#{game.play}" />
+    <attr sel="#game-welcome" th:text="|#{game.welcomeTo} #{game.title}!|" />
+    <attr sel="#play-button-hint" th:text="#{game.playButtonHint}" />
 </thlogic>

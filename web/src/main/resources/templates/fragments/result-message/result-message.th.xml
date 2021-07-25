@@ -1,4 +1,5 @@
 <thlogic>
     <attr sel="#result-message" th:fragment="resultMessageFragment" th:if="${resultMessage} != null" />
     <attr sel="#result-message-content" th:text="${resultMessage}" />
+    <attr sel="#message-title" th:text="#{game.result}" />
 </thlogic>

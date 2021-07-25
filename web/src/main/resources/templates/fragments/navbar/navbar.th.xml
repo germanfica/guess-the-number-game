@@ -3,18 +3,21 @@
     <!-- Home url logic - Shows the home view and active the nav link -->
     <attr sel="#home-url"
           th:href="${homeUrl}"
+          th:text="#{game.home}"
           th:class="${currentUrl} == ${homeUrl}
             ? 'nav-link active'
             : 'nav-link' " />
     <!-- Play url logic - Shows the play view and active the nav link -->
     <attr sel="#play-url"
           th:href="${playUrl}"
+          th:text="#{game.play}"
           th:class="${currentUrl} == ${playUrl}
             ? 'nav-link active'
             : 'nav-link' " />
     <!-- Play url logic - Shows the about view and active the nav link -->
     <attr sel="#about-url"
           th:href="${aboutUrl}"
+          th:text="#{game.about}"
           th:class="${currentUrl} == ${aboutUrl}
             ? 'nav-link active'
             : 'nav-link' " />

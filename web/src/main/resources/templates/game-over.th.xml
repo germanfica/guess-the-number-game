@@ -13,6 +13,9 @@
     <attr sel="#footer" th:replace="~{fragments/footer/footer :: footerFragment}" />
     <!-- Restart url logic - Restart the game -->
     <attr sel="#restart-button" th:href="${restartUrl}" />
+    <attr sel="#restart-button-text" th:text="#{game.playAgain}" />
     <!-- Home url logic - Go to the home -->
-    <attr sel="#home-button" th:href="${homeUrl}" />
+    <attr sel="#home-button"
+          th:href="${homeUrl}"
+          th:text="#{game.goToHome}" />
 </thlogic>
