@@ -1,4 +1,6 @@
 <thlogic>
     <!-- Head -->
     <attr sel="#game-input" th:fragment="gameInputFragment" th:action="${playUrl}" />
+    <attr sel="#enter-guess" th:text="#{game.enter.guess}" />
+    <attr sel="#submit-button" th:text="#{game.submit}" />
 </thlogic>

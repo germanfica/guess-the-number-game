@@ -1,4 +1,5 @@
 <thlogic>
     <!-- Head -->
     <attr sel="#footer" th:fragment="footerFragment" />
+    <attr sel="#created-by" th:text="|#{game.createdBy} German Fica|" />
 </thlogic>

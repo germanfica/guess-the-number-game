@@ -18,4 +18,5 @@
           th:class="${currentUrl} == ${aboutUrl}
             ? 'nav-link active'
             : 'nav-link' " />
+    <attr sel="#game-title" th:text="#{game.title}" />
 </thlogic>

@@ -2,4 +2,5 @@
     <attr sel="#head" th:fragment="headFragment" />
     <attr sel="#main-css" th:href="@{/css/main.css}" />
     <attr sel="#play-css" th:href="@{/css/play.css}" />
+    <attr sel="#title" th:text="#{game.title}" />
 </thlogic>
